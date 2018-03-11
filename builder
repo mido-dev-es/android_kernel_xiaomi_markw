@@ -1,4 +1,4 @@
-export CROSS_COMPILE=/home/vabe/bin/aarch64-linux-android-a53-7.x/bin/aarch64-cortex_a53-linux-android-
+export CROSS_COMPILE=/home/paloda/cocina/linaro-7.2-dev/bin/aarch64-linux-gnu-
 export ARCH=arm64 && export SUBARCH=arm64
 make clean
 make mrproper

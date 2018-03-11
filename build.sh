@@ -29,23 +29,24 @@ echo "         Compiling Voodoo Kernel             "
 echo -e "***********************************************$nocol"
 
 LC_ALL=C date +%Y-%m-%d
-kernel_dir=$PWD
-build=$kernel_dir/out
-export CROSS_COMPILE="/home/vabe/bin/aarch64-linux-android-a53-7.x/bin/aarch64-cortex_a53-linux-android-"
+KERNEL_DIR=$PWD
+OUT_DIR=$KERNEL_DIR/out
+BUILDING_DIR=$OUT_DIR/kernel_obj
+export CROSS_COMPILE="/home/paloda/cocina/aarch64-cortex_a53-linux-gnueabi-gcc-7/bin/aarch64-cortex_a53-linux-gnueabi-"
 kernel="Voodoo"
-version="9"
+version="10"
 vendor="xiaomi"
 android="OREO"
-device="markw"
+device="mido"
 zip=zip
 date=`date +"%Y%m%d-%H%M"`
-config=markw_defconfig
+config=mido_defconfig
 kerneltype="Image.gz-dtb"
 jobcount="-j$(grep -c ^processor /proc/cpuinfo)"
 #modules_dir=$kernel_dir/"$zip"/system/lib/modules
-modules_dir=$kernel_dir/"$zip"/modules
+modules_dir=$KERNEL_DIR/"$zip"/modules
 zip_name="$kernel"-"$version"-"$date"-"$android"-"$device".zip
-export KBUILD_BUILD_USER=VaBe
+export KBUILD_BUILD_USER=PaLoDa
 export KBUILD_BUILD_HOST=DroidBox
 
 echo "Checking for build..."
@@ -139,4 +140,3 @@ else
 fi
 # Export script by Savoca
 # Thank You Savoca!
- 
